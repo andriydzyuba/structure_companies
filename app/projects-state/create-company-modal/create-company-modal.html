@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="{{$index}}-label">{{vm.message}}</h4>
+</div>
+<div class="modal-body">
+    <form>
+        <input type="text" data-ng-model="vm.company.name" placeholder="Company name" class="form-control">
+        <br>
+        <span><strong>Company Earnings $</strong></span>
+        <input type="number" data-ng-model="vm.company.earnings" placeholder="Earnings" class="form-control">
+    </form>
+    <br>
+
+   <button ng-if="!vm.parentCompany.edit" class="btn btn-success" ng-click="vm.createCompany()">Create</button>
+   <button ng-if="vm.parentCompany.edit" class="btn btn-warning" ng-click="vm.editCompany()">Edit</button>
+   <button class="btn btn-danger" ng-click="vm.respond(false)">Cancel</button>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-default" ng-click="$dismiss()">Close</button>
+</div>

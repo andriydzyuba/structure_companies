@@ -1,0 +1,13 @@
+<div class="container-fluid main">
+    <div>
+        <span class="mainButton">Create Main Company </span><button class="btn btn-success" ng-click="vm.createCompany({parent_id: 0})"><i class="fas fa-plus"></i></button>
+    </div>
+    <ul data-ng-repeat="company in vm.companiesList">
+        <li  id={{company.id}} ng-init="vm.getList(company.id)">
+            <span class="nameCompany" ng-bind="company.name"></span>
+            <span id="span+{{company.id}}">{{" | Earnings: " + company.earnings + "$ | Total: "}}{{+company.earnings + +company.total + "$ |"}}</span>
+            <button class="btn btn-danger" ng-click="vm.deleteCompany(company.id)"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-warning" ng-click="vm.createCompany({id: company.id, name: company.name, edit: true})"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-success" ng-click="vm.createCompany({id: company.id, name: company.name})"><i class="fas fa-plus"></i></button>
+    </ul>
+</div>

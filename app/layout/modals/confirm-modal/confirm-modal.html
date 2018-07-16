@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="{{$index}}-label">{{vm.message}}</h4>
+</div>
+<div class="modal-body">
+   <button class="btn btn-success" ng-click="vm.respond(true)">Delete</button>
+   <button class="btn btn-danger" ng-click="vm.respond(false)">Cancel</button>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-sm btn-default" ng-click="$dismiss()">Close</button>
+</div>
